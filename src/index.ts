@@ -8,17 +8,17 @@ class SimpleSocketServer extends WebSocketServer {
 		super(options, callback);
 		this.connectionListeners = [];
 		super.on('connection', socket => {
-            const simpleSocket = new SimpleSocket(socket);
-            
-            simpleSocket.send("connection");
+			const simpleSocket = new SimpleSocket(socket);
+
+			simpleSocket.send('connection');
 
 			this.connectionListeners.forEach(listener => {
 				listener(simpleSocket);
-            });
-            
-            socket.on("close", () => {
-                simpleSocket.send("disconnect");
-            });
+			});
+
+			socket.on('close', () => {
+				simpleSocket.send('disconnect');
+			});
 		});
 	}
 	onConnection(listener: (socket: SimpleSocket) => void) {

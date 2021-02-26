@@ -1,15 +1,22 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "simple-sockets-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "exports": {
+    "import": "./lib/esm/index.js",
+    "default": "./lib/cjs/index.js"
+  },
+  "types": "./types/index.d.ts",
   "scripts": {
     "test": "jest --coverage",
     "transpile:cjs": "tsc -p tsconfig.json",
     "transpile:esm": "tsc -p tsconfig.esm.json",
     "transpile:all": "npm run transpile:cjs && npm run transpile:esm",
     "transpile": "npm run transpile:all && npm run post-compile && npm run move-build",
-    "move-build": "cp src/*.d.ts lib/cjs && mv lib/cjs/*.d.ts types/",
+    "move-build": "cp src/**/*.d.ts lib/cjs && mv lib/cjs/**/*.d.ts types/",
     "lint": "eslint . --ext .ts",
     "prettier-format": "prettier --config .prettierrc --write **/*.ts",
     "post-compile": "npm run prettier-format && npm run lint && npm test && npm run make-badges",
