@@ -1,8 +1,7 @@
 {
-  "name": "simple-sockets-server",
+  "name": "simple-websockets-server",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "exports": {
@@ -16,7 +15,7 @@
     "transpile:esm": "tsc -p tsconfig.esm.json",
     "transpile:all": "npm run transpile:cjs && npm run transpile:esm",
     "transpile": "npm run transpile:all && npm run post-compile && npm run move-build",
-    "move-build": "cp src/**/*.d.ts lib/cjs && mv lib/cjs/**/*.d.ts types/",
+    "move-build": "cp src/**/*.d.ts lib/cjs && mv lib/cjs/*.d.ts types/",
     "lint": "eslint . --ext .ts",
     "prettier-format": "prettier --config .prettierrc --write **/*.ts",
     "post-compile": "npm run prettier-format && npm run lint && npm test && npm run make-badges",
@@ -48,6 +47,7 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
+    "simple-websockets": "file:../simple-sockets",
     "ws": "^7.4.3"
   }
 }

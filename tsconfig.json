@@ -12,6 +12,7 @@
   "exclude": [
     "__tests__/**/*.ts",
     "lib/**/*.ts",
-    "./jest.config.ts"
+    "./jest.config.ts",
+    "types/*.ts"
   ],
 }

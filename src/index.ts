@@ -1,14 +1,13 @@
 import { Server as WebSocketServer, ServerOptions } from 'ws';
-import { SimpleSocket } from './client';
-import * as Utils from './client/util';
+import { SimpleWebSocket, convertEventToMessage } from 'simple-websockets';
 
-class SimpleSocketServer extends WebSocketServer {
-	connectionListeners: ((socket: SimpleSocket) => void)[];
+class SimpleWebSocketServer extends WebSocketServer {
+	connectionListeners: ((socket: SimpleWebSocket) => void)[];
 	constructor(options?: ServerOptions, callback?: () => void) {
 		super(options, callback);
 		this.connectionListeners = [];
 		super.on('connection', socket => {
-			const simpleSocket = new SimpleSocket(socket);
+			const simpleSocket = new SimpleWebSocket(socket);
 
 			simpleSocket.send('connection');
 
@@ -21,14 +20,14 @@ class SimpleSocketServer extends WebSocketServer {
 			});
 		});
 	}
-	onConnection(listener: (socket: SimpleSocket) => void) {
+	onConnection(listener: (socket: SimpleWebSocket) => void) {
 		this.connectionListeners.push(listener);
 	}
 	send(eventName: string, ...values: any[]) {
 		this.clients.forEach(socket => {
-			socket.send(Utils.convertEventToMessage(eventName, values));
+			socket.send(convertEventToMessage(eventName, values));
 		});
 	}
 }
 
-export { SimpleSocketServer };
+export { SimpleWebSocketServer };
