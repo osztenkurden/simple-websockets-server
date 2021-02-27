@@ -25,7 +25,7 @@ class SimpleWebSocketServer extends ws.Server {
 	}
 	send(eventName: string, ...values: any[]) {
 		this.clients.forEach(socket => {
-			socket.send(convertEventToMessage(eventName, values));
+			socket.send(convertEventToMessage(eventName, ...values));
 		});
 	}
 }
