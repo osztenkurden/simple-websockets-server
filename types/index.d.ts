@@ -1,8 +1,8 @@
-import { Server as WebSocketServer, ServerOptions } from 'ws';
+import ws from 'ws';
 import { SimpleWebSocket } from 'simple-websockets';
-declare class SimpleWebSocketServer extends WebSocketServer {
+declare class SimpleWebSocketServer extends ws.Server {
     connectionListeners: ((socket: SimpleWebSocket) => void)[];
-    constructor(options?: ServerOptions, callback?: () => void);
+    constructor(options?: ws.ServerOptions, callback?: () => void);
     onConnection(listener: (socket: SimpleWebSocket) => void): void;
     send(eventName: string, ...values: any[]): void;
 }

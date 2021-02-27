@@ -1,9 +1,9 @@
-import { Server as WebSocketServer, ServerOptions } from 'ws';
+import ws from 'ws';
 import { SimpleWebSocket, convertEventToMessage } from 'simple-websockets';
 
-class SimpleWebSocketServer extends WebSocketServer {
+class SimpleWebSocketServer extends ws.Server {
 	connectionListeners: ((socket: SimpleWebSocket) => void)[];
-	constructor(options?: ServerOptions, callback?: () => void) {
+	constructor(options?: ws.ServerOptions, callback?: () => void) {
 		super(options, callback);
 		this.connectionListeners = [];
 		super.on('connection', socket => {
