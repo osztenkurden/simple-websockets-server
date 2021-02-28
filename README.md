@@ -15,9 +15,7 @@ import { SimpleWebSocketServer } from 'simple-websockets-server';
 
 const server = new SimpleWebSocketServer({ port: 1234 });
 
-
-// socket - SimpleWebSocket instance
-server.onConnection((socket: SimpleWebSocket) => {
+server.onConnection((socket: SimpleWebSocket, request: http.IncomingRequest) => {
     socket.on("some event from socket", (someData) => {
         socket.send("some response", someResponseData);
     });
