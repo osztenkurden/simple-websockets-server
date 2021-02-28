@@ -1,6 +1,6 @@
 {
   "name": "simple-websockets-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "./lib/cjs/index.js",
   "type": "module",
@@ -26,14 +26,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lexogrine/typescript-boilerplate.git"
+    "url": "git+https://github.com/osztenkurden/simple-websockets-server.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lexogrine/typescript-boilerplate/issues"
+    "url": "https://github.com/osztenkurden/simple-websockets-server/issues"
   },
-  "homepage": "https://github.com/lexogrine/typescript-boilerplate#readme",
+  "homepage": "https://github.com/osztenkurden/simple-websockets-server#readme",
   "devDependencies": {
     "@types/node": "^14.14.31",
     "@types/ws": "^7.4.0",
@@ -50,7 +50,7 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "simple-websockets": "^1.0.3",
+    "simple-websockets": "^1.0.4",
     "ws": "^7.4.3"
   }
 }
