@@ -1,6 +1,6 @@
 {
   "name": "simple-websockets-server",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "",
   "main": "./lib/cjs/index.js",
   "type": "module",
@@ -50,7 +50,7 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "simple-websockets": "^1.0.4",
+    "simple-websockets": "^1.1.0",
     "ws": "^7.4.3"
   }
 }
