@@ -1,6 +1,6 @@
 import ws from 'ws';
 import http from 'http';
-import { SimpleWebSocket, convertEventToMessage } from 'simple-websockets';
+import { SimpleWebSocket, convertEventToMessage, getEnvironment, convertMessageToEvent } from 'simple-websockets';
 
 type ListenerCallback = (socket: SimpleWebSocket, request: http.IncomingMessage) => void;
 
@@ -28,3 +28,5 @@ class SimpleWebSocketServer extends ws.Server {
 }
 
 export { SimpleWebSocketServer };
+export { getEnvironment, convertMessageToEvent, convertEventToMessage };
+export { SimpleWebSocket };

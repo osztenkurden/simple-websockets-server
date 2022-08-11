@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import ws from 'ws';
 import http from 'http';
-import { SimpleWebSocket } from 'simple-websockets';
+import { SimpleWebSocket, convertEventToMessage, getEnvironment, convertMessageToEvent } from 'simple-websockets';
 declare type ListenerCallback = (socket: SimpleWebSocket, request: http.IncomingMessage) => void;
 declare class SimpleWebSocketServer extends ws.Server {
 	connectionListeners: ListenerCallback[];
@@ -10,3 +10,5 @@ declare class SimpleWebSocketServer extends ws.Server {
 	send(eventName: string, ...values: any[]): void;
 }
 export { SimpleWebSocketServer };
+export { getEnvironment, convertMessageToEvent, convertEventToMessage };
+export { SimpleWebSocket };

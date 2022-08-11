@@ -1,6 +1,6 @@
 {
   "name": "simple-websockets-server",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "./lib/cjs/index.js",
   "type": "module",
