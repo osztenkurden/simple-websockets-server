@@ -1,4 +1,4 @@
-# DEPRECATED - USE ![`simple-websockets/server`](https://github.com/osztenkurden/simple-websockets?tab=readme-ov-file#server)
+# DEPRECATED - USE [`simple-websockets/server`](https://github.com/osztenkurden/simple-websockets?tab=readme-ov-file#server)
 # Simple Websockets Server
 
 ## What is it for?
