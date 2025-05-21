@@ -1,8 +1,4 @@
-![Statements](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg) 
-![CI](https://img.shields.io/github/workflow/status/osztenkurden/simple-websockets-server/CI)
-![Dependencies](https://img.shields.io/david/osztenkurden/simple-websockets-server)
-![Downloads](https://img.shields.io/npm/dm/simple-websockets-server)
-![Version](https://img.shields.io/npm/v/simple-websockets-server)
+# DEPRECATED - USE ![`simple-websockets/server`](https://github.com/osztenkurden/simple-websockets?tab=readme-ov-file#server)
 # Simple Websockets Server
 
 ## What is it for?
